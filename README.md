@@ -372,7 +372,11 @@ SOME_API_SECRET=...
 
 ## 📄 License
 
-This project is open source. See [LICENSE](./LICENSE) for details.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+This project is licensed under the **MIT License** — you are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, as long as the original copyright notice is included.
+
+See [LICENSE](./LICENSE) for the full text.
 
 ---
 
