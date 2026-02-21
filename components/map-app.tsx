@@ -330,22 +330,21 @@ export default function MapApp({ initialData }: MapAppProps) {
             </p>
             <div className="mt-2 -mx-1 overflow-x-auto px-1">
               <div className="inline-flex gap-2 pb-1">
-              {[ALL_REGIONS, ...availableRegions].map((region) => (
-                <button
-                  key={region}
-                  type="button"
-                  onClick={() => setSelectedRegion(region)}
-                  className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium transition ${
-                    selectedRegion === region
-                      ? 'border-sky-300 bg-sky-100 text-sky-800'
-                      : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
-                  }`}
-                >
-                  {region === ALL_REGIONS
-                    ? region
-                    : `${regionCodeByName.get(region) ?? '--'} ${region}`}
-                </button>
-              ))}
+                {[ALL_REGIONS, ...availableRegions].map((region) => (
+                  <button
+                    key={region}
+                    type="button"
+                    onClick={() => setSelectedRegion(region)}
+                    className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium transition ${selectedRegion === region
+                        ? 'border-sky-300 bg-sky-100 text-sky-800'
+                        : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
+                      }`}
+                  >
+                    {region === ALL_REGIONS
+                      ? region
+                      : `${regionCodeByName.get(region) ?? '--'} ${region}`}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -438,11 +437,10 @@ export default function MapApp({ initialData }: MapAppProps) {
                 filteredCities.map((city) => (
                   <div
                     key={city.id}
-                    className={`rounded-xl border p-3 transition ${
-                      selectedCityId === city.id
+                    className={`rounded-xl border p-3 transition ${selectedCityId === city.id
                         ? 'border-sky-400 bg-sky-50'
                         : 'border-slate-200 bg-white hover:border-slate-300'
-                    }`}
+                      }`}
                   >
                     <button
                       type="button"
@@ -488,11 +486,10 @@ export default function MapApp({ initialData }: MapAppProps) {
                                 city.regionCode
                               )
                             }
-                            className={`rounded-md border px-2 py-1 text-xs transition ${
-                              wasCopied
+                            className={`rounded-md border px-2 py-1 text-xs transition ${wasCopied
                                 ? 'border-emerald-300 bg-emerald-50 text-emerald-700'
                                 : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-white'
-                            }`}
+                              }`}
                           >
                             {wasCopied ? (
                               <span className="inline-flex items-center gap-1">
@@ -603,11 +600,10 @@ export default function MapApp({ initialData }: MapAppProps) {
                             selectedCity.regionCode
                           )
                         }
-                        className={`inline-flex items-center gap-1 rounded-lg border px-3 py-1.5 text-sm transition ${
-                          wasCopied
+                        className={`inline-flex items-center gap-1 rounded-lg border px-3 py-1.5 text-sm transition ${wasCopied
                             ? 'border-emerald-300 bg-emerald-50 text-emerald-700'
                             : 'border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-300 hover:bg-white'
-                        }`}
+                          }`}
                       >
                         {wasCopied ? (
                           <Check className="h-3.5 w-3.5" />
@@ -659,6 +655,19 @@ export default function MapApp({ initialData }: MapAppProps) {
             </div>
           )}
         </section>
+
+        <footer className="mt-2 pb-4 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-5 py-2.5 shadow-sm backdrop-blur-sm">
+            <SomaliFlag className="h-4 w-6 rounded-[2px] shadow-sm" />
+            <span className="text-sm font-medium text-slate-600">
+              Built with{' '}
+              <span className="text-red-500">❤️</span>
+              {' '}for{' '}
+              <span className="font-semibold text-slate-800">Somalia</span>
+            </span>
+            <SomaliFlag className="h-4 w-6 rounded-[2px] shadow-sm" />
+          </div>
+        </footer>
       </main>
     </div>
   )
